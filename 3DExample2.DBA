@@ -1,0 +1,18 @@
+sync on
+sync rate 30
+z=150
+color backdrop rgb(0,0,0)
+ink rgb(255,255,255),0
+make object cube 1,15
+scale object 1,12,12,12
+
+repeat
+color object 1,rgb(rnd(255),rnd(255),rnd(255))
+
+position camera 50,50,-60
+point camera 0,0,z
+sync
+z=z-2
+if z<-150 then z=240
+until escapekey()=1
+end
